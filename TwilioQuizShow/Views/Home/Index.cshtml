@@ -1,0 +1,130 @@
+﻿@{
+    ViewBag.Title = "Twilio Quiz Show";
+}
+
+<div id="container">
+    <header>
+        <div id="header">
+            <h1 class="section-heading">Quiz Show</h1>
+        </div>
+    </header>
+    <section>
+        <div id="content">
+
+            <div class="narrow">
+
+            <div style="text-align:left; float:left; width:50%;">
+                <div class="blurb">Welcome to the Twilio Quiz Show!  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis arcu velit, non placerat tortor. Nunc et lectus et ante tristique ultrices. Nulla facilisi. Phasellus nec iaculis est. </div>
+                <button class="call button" onclick="call('+19108638087');" disabled="disabled" id="call">Take a Quiz</button>
+                <button class="call button" onclick="hangup();" style="display:none;" id="hangup">Quit the Quiz</button>
+                <div class="blurb" style="font-family:'Courier New', Courier, 'Nimbus Mono L', monospace" id="log">Loading pigeons...</div>
+            </div>
+
+            <div style="text-align:left; float:left; width:50%;">
+                <div id="dialpad" style="background-color:lightgray; width:195px; margin-left:auto; margin-right:auto">
+                    <table>
+                    <tr>
+                    <td><input type="button" value="1" class="redButton" id="button1"></td>
+                    <td><input type="button" value="2" class="redButton" id="button2"></td>
+                    <td><input type="button" value="3" class="redButton" id="button3"></td>
+                    </tr>
+                    <tr>
+                    <td><input type="button" value="4" class="redButton" id="button4"></td>
+                    <td><input type="button" value="5" class="redButton" id="button5"></td>
+                    <td><input type="button" value="6" class="redButton" id="button6"></td>
+                    </tr>
+                    <tr>
+                    <td><input type="button" value="7" class="redButton" id="button7"></td>
+                    <td><input type="button" value="8" class="redButton" id="button8"></td>
+                    <td><input type="button" value="9" class="redButton" id="button9"></td>
+                    </tr>
+                    <tr>
+                    <td><input type="button" value="*" class="redButton" id="buttonstar"></td>
+                    <td><input type="button" value="0" class="redButton" id="button0"></td>
+                    <td><input type="button" value="#" class="redButton" id="buttonpound"></td>
+                    </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <footer>
+        <p class="footer">
+            Source on <a
+                href="https://github.com/devinrader/twilioQuizShow">Github</a>.
+            Released under <a
+                href="http://www.opensource.org/licenses/mit-license.html">MIT license</a>.
+        </p>
+    </footer>
+</div>
+
+
+@section scripts {
+
+        <script type="text/javascript">
+            var connection = null;
+
+            $(document).ready(function () {
+
+                Twilio.Device.setup('@ViewBag.token');
+
+                Twilio.Device.ready(function (device) {
+                    $("#call").attr("disabled", false);
+                    $("#log").text("Ready");
+                });
+
+                Twilio.Device.error(function (error) {
+                    $("#log").text("Error: " + error.message);
+                });
+
+                Twilio.Device.connect(function (conn) {
+                    $("#log").text("Successfully established call");
+                });
+
+                Twilio.Device.disconnect(function (conn) {
+                    $("#log").text("Call ended");
+                });
+
+                Twilio.Device.incoming(function (conn) {
+                    $("#log").text("Incoming connection from " + conn.parameters.From);
+                    // accept the incoming connection and start two-way audio
+                    conn.accept();
+                });
+
+                $.each(['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'star', 'pound'], function (index, value) {
+
+                    $('#button' + value).click(function () {
+                        if (connection) {
+                            if (value == 'star')
+                                connection.sendDigits('*')
+                            else if (value == 'pound')
+                                connection.sendDigits('#')
+                            else
+                                connection.sendDigits(value)
+                            return false;
+                        }
+                    });
+                });
+            });
+
+        function call(callerId) {
+            $("#call").toggle();
+            $("#hangup").toggle();
+
+            // get the phone number to connect the call to
+            params = { 'Source': callerId, 'Target': '+19105503856' };
+            connection = Twilio.Device.connect(params);
+        }
+
+        function hangup() {
+            $("#call").toggle();
+            $("#hangup").toggle();
+
+            Twilio.Device.disconnectAll();
+        }
+    </script>
+
+
+}
+

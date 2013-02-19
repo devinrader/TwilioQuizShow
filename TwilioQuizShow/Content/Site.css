@@ -1,0 +1,223 @@
+﻿body, html {
+	background: #d80000;
+}
+
+#container {
+	height: 800px;
+	background: url("http://static0.twilio.com/packages/twilio-conference/img/twiliocon-2012-bg.png") no-repeat center top;
+}
+
+#header {
+	width: 960px;
+	margin: 0 auto;
+	padding: 100px 0 0 0;
+}
+
+#header .section-heading {
+	line-height: 68px;
+	margin: 0;
+	padding: 0 0 0 233px;
+	font-family: 'Helvetica',sans-serif;
+	font-size: 52px;
+	font-weight: 100;
+	color: #FFF;
+	text-align: center;
+	background: url("http://static0.twilio.com/packages/twilio-conference/img/twilio-logo-2012-header.png") no-repeat 148px center;
+}
+
+#content {
+	font-family: 'Helvetica',sans-serif;
+	width: 960px;
+	height: 250px;
+	margin: 0 auto;
+	padding: 90px 0 0 0;
+}
+
+#content .narrow {
+	width:700px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#content .section-heading {
+	margin: 0 0 10px 0;
+	font-family: 'Helvetica',sans-serif;
+	font-size: 38px;
+	font-weight: 100;
+	color: #7C0000;
+	text-align: center;
+}
+
+#content .blurb {
+	line-height: 1.2em;
+	margin: 5px 0 20px 0;
+	font-family: 'Helvetica',sans-serif;
+	font-size: 17px;
+	font-weight: 100;
+	color: #DDD;
+}
+
+#url_list {
+	margin: 10px 0 20px 85px;
+}
+
+#url_list dt {
+	line-height: 1.2em;
+	margin: 0px;
+	font-family: 'Helvetica',sans-serif;
+	font-size: 14px;
+	font-weight: 100;
+	color: #DDD;
+}
+
+#url_list dd, #content a {
+	font-family: 'Helvetica',sans-serif;
+	font-weight: 100;
+	color: #7C0000;
+}
+
+#url_list a {
+	font-size: 18px;
+	margin: 3px 0 5px 30px;
+}
+
+#content a:hover {
+	color: #FFF;
+}
+
+#content a {
+	text-decoration: none;
+}
+
+#content form {
+	width: 200px;
+	float: right;
+	margin: -55px 100px 0 0;
+	padding: 10px;
+	font-family: 'Helvetica',sans-serif;
+	color: #7C0000;
+}
+
+#content label {
+	font-size: 14px;
+	font-weight: 60;
+	text-align: left;
+	padding: 5px 0 5px 0;
+}
+
+#content #phone_number {
+	width: 198px;
+	font-size: 18px;
+	font-weight: 60;
+	text-align: left;
+	padding: 5px 0 5px 0;
+	margin-bottom: 5px;
+}
+
+#content #phone_number input {
+	border: 2px solid #454545;
+}
+
+#content #phone_number input:hover, #content #phone_number input:focus {
+	border: 2px solid #efefef;
+}
+
+#content .button {
+	width: 200px;
+	font-size: 26px;
+	font-weight: 100;
+	padding: 10px 0 10px 0;
+	text-align: center;
+	color: #454545;
+	background-color: #EFEFEF;
+	background: -webkit-gradient(linear, left top, left bottom, from(#efefef), to(#cccccc));
+	background: -moz-linear-gradient(top, #efefef, #cccccc);
+	border-top: 2px solid #FFF;
+	border-bottom: 1px solid #555;
+	border-left: 0px;
+	border-right: 0px;
+}
+
+
+#content .button:hover {
+	color: #222;
+	background-color: #FFF;
+	background: -webkit-gradient(linear, left top, left bottom, from(white), to(#dddddd));
+	background: -moz-linear-gradient(top, white, #dddddd);
+	border-top: 2px solid #FFF;
+}
+
+#content .button:active {
+	color: #222;
+	background-color: #FFF;
+	background: -webkit-gradient(linear, left top, left bottom, from(#cccccc), to(#efefef));
+	background: -moz-linear-gradient(top, #cccccc, #efefef);
+	border-top: 2px solid #888;
+	border-bottom: 1px solid #FFF;
+}
+
+#content .button[disabled] {
+	color: #efefef;
+	background-color: #FFF;
+	background: -webkit-gradient(linear, left top, left bottom, from(#cccccc), to(#efefef));
+	background: -moz-linear-gradient(top, #cccccc, #efefef);
+	border-top: 2px solid #888;
+	border-bottom: 1px solid #FFF;
+}
+
+#form ul, #form li {
+	margin: 0;
+	list-style: none;
+}
+
+.footer {
+	font-family:Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+	width: 960px;
+	margin: 0 auto;
+	text-align: center;
+	color: #7C0000;
+}
+
+.footer a {
+	text-decoration: none;
+	color: #7C0000;
+}
+
+.footer a:hover {
+	color: #FFF;
+}
+
+.redButton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #f29c93;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #f29c93;
+	box-shadow:inset 0px 1px 0px 0px #f29c93;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fe1a00), color-stop(1, #ce0100) );
+	background:-moz-linear-gradient( center top, #fe1a00 5%, #ce0100 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fe1a00', endColorstr='#ce0100');
+	background-color:#fe1a00;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #d83526;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	-webkit-text-shadow:1px 1px 0px #b23e35;
+	text-shadow:1px 1px 0px #b23e35;
+}
+
+.redButton:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ce0100), color-stop(1, #fe1a00) );
+	background:-moz-linear-gradient( center top, #ce0100 5%, #fe1a00 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ce0100', endColorstr='#fe1a00');
+	background-color:#ce0100;
+}
+
+.redButton:active {
+	position:relative;
+	top:1px;
+}
