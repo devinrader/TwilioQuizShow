@@ -7,8 +7,8 @@ Prerequisites
 --------------
 In order to run this sample you will need to ensure you have the following prerequisites installed:
 
-Visual Studio 2012 or later
-ASP.NET MVC 4 or later
+* Visual Studio 2012 or later
+* ASP.NET MVC 4 or later
 
 Configuration
 --------------
