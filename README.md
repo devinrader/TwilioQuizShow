@@ -14,19 +14,23 @@ Configuration
 --------------
 This sample comes with a single project that you need to configure and deploy. Lets walk through whats there and how to get it running. To get started:
 
-* If you don't already have one, create an Twilio account
+* If you don't already have one, create an Twilio account.  You will need at least one Twilio phone number.
 * Make sure you have the prequisites listed above installed
 
-Next, grab the latest source code and open the solution in Visual Studio.  Before you run the project, you will need to configure how it generates a Twilio Client token.  By default the project expects to download a token from a public URL.  You can configure this URL by changing the value of the TwilioGeneratorUrl configuration key which is located in the AppSettings.config file:
+Next, grab the latest source code and open the solution in Visual Studio.  Before you run the project, there are several configuration values that you need to change.  You can find all of these values in the AppSettings.config file
 
-<add key="TokenGeneratorUrl" value="[YOUR_GENERATOR_TOKEN]"/>
+* TokenGeneratorUrl - The sample needs a Twilio Client token to power the browser phone.  By default the project expects to download a token from a public URL which you can set using this key.
+* TargetPhoneNumber - This is the phone number that the serves as the entry point into the Quiz Show IVR.
+* CallerIdPhoneNumber - This is the phone number used as the Twilio Clients caller ID.
 
-Once you've updated the settings, deploy the TwilioQuizShow project to your web host.
+Once you've updated the configuration settings, deploy the TwilioQuizShow project to your web host.
 
+Finally, point the Voice URL for your Twilio phone number at http://[yourhost]/Phone/EnqueueCaller
 
+You should not be able to load the default project page in a browser and call the Quiz Show IVR.
 
 More Info
 -------------
 The full Queue documentation is available here: http://www.twilio.com/docs/api/twiml/queue and http://www.twilio.com/docs/api/rest/queue
 
-Built for explanation & demo purposes, September 2012.
+Built for explanation & demo purposes, February 2013.
