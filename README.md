@@ -1,7 +1,7 @@
 Twilio Quiz Show
 ==============
 
-Twilio Quiz Show is a sample that demostrates how to use the Twilio [<Gather>](http://www.twilio.com/docs/api/twiml/gather) verb inside of TwiML responses returned as part of a queue wait experience.  The sample includes a sample IVR which adds a caller to a [Queue](http://www.twilio.com/docs/api/twiml/enqueue) and allows them to play a simple trivia game while they wait.  Additionally the sample includes a test webpage that allows ou to call the queue.
+Twilio Quiz Show is a sample that demostrates how to use the Twilio [&lt;Gather&gt;](http://www.twilio.com/docs/api/twiml/gather) verb inside of TwiML responses returned as part of a queue wait experience.  The sample includes a sample IVR which adds a caller to a [Queue](http://www.twilio.com/docs/api/twiml/enqueue) and allows them to play a simple trivia game while they wait.  Additionally the sample includes a test webpage that allows ou to call the queue.
 
 Prerequisites
 --------------
