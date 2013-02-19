@@ -14,8 +14,8 @@
             <div class="narrow">
 
             <div style="text-align:left; float:left; width:50%;">
-                <div class="blurb">Welcome to the Twilio Quiz Show!  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis arcu velit, non placerat tortor. Nunc et lectus et ante tristique ultrices. Nulla facilisi. Phasellus nec iaculis est. </div>
-                <button class="call button" onclick="call('+19108638087');" disabled="disabled" id="call">Take a Quiz</button>
+                <div class="blurb">Welcome to the Twilio Quiz Show!  Click the button below to connect and play.</div>
+                <button class="call button" onclick="call('@ViewBag.callerIdPhoneNumber');" disabled="disabled" id="call">Take a Quiz</button>
                 <button class="call button" onclick="hangup();" style="display:none;" id="hangup">Quit the Quiz</button>
                 <div class="blurb" style="font-family:'Courier New', Courier, 'Nimbus Mono L', monospace" id="log">Loading pigeons...</div>
             </div>
@@ -113,7 +113,7 @@
             $("#hangup").toggle();
 
             // get the phone number to connect the call to
-            params = { 'Source': callerId, 'Target': '+19105503856' };
+            params = { 'Source': callerId, 'Target': '@ViewBag.targetPhoneNumber' };
             connection = Twilio.Device.connect(params);
         }
 

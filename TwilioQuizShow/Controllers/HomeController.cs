@@ -18,10 +18,14 @@ namespace TwilioQuizShow.Controllers
             WebClient client = new WebClient();
 
             string token = String.Empty;
+            string targetPhoneNumber = String.Empty;
+            string callerIdPhoneNumber = String.Empty;
 
             try
             {
                 token = client.DownloadString(ConfigurationManager.AppSettings["TokenGeneratorUrl"]);
+                targetPhoneNumber = ConfigurationManager.AppSettings["TargetPhoneNumber"];
+                callerIdPhoneNumber = ConfigurationManager.AppSettings["CallerIdPhoneNumber"];
             }
             catch (Exception exc)
             {
@@ -29,6 +33,8 @@ namespace TwilioQuizShow.Controllers
             }
 
             ViewBag.token = token;
+            ViewBag.targetPhoneNumber = targetPhoneNumber;
+            ViewBag.callerIdPhoneNumber = callerIdPhoneNumber;
 
             return View();
         }
