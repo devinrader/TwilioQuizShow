@@ -27,7 +27,7 @@ Once you've updated the configuration settings, deploy the TwilioQuizShow projec
 
 Finally, point the Voice URL for your Twilio phone number at _http://[yourhost]/Phone/EnqueueCaller_
 
-You should not be able to load the default project page in a browser and call the Quiz Show IVR.
+You should now be able to load the default project page in a browser and call the Quiz Show IVR.
 
 More Info
 -------------
