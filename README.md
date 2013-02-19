@@ -1,13 +1,17 @@
 Twilio Quiz Show
 ==============
 
+Twilio Quiz Show is a simple sample application that demostrates how to use the Twilio <Gather> verb inside of TwiML responses returned as part of a queue wait experience.  The sample includes a sample IVR which adds a caller to a Queue and allows them to play a simple tria game while they wait.  Additionally the sample includes a test webpage that allows ou to call the queue.
+
 Prerequisites
+--------------
 In order to run this sample you will need to ensure you have the following prerequisites installed:
 
 Visual Studio 2012 or later
 ASP.NET MVC 4 or later
 
 Configuration
+--------------
 This sample comes with a single project that you need to configure and deploy. Lets walk through whats there and how to get it running. To get started:
 
 If you don't already have one, create an Twilio account
