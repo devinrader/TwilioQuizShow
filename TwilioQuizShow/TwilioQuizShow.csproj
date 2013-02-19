@@ -145,7 +145,9 @@
     <Content Include="Content\Audio\Basic\Music.mp3" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="AppSettings.config" />
+    <Content Include="AppSettings.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Properties\PublishProfiles\quizshow - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\quizshow - Web Deploy.pubxml" />
     <Content Include="Scripts\_references.js" />
